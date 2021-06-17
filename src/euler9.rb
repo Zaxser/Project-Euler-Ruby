@@ -9,11 +9,13 @@
 # There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 # Find the product abc.
 
-(0...1000).each do |c|
+# Dumb brute force solution
+(0...500).each do |c|
   (0...(1000 - c)).each do |b|
     a = 1000 - c - b
     if a**2 + b**2 == c**2
       p a * b * c
+      break
     end
   end
 end
