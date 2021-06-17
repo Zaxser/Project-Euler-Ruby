@@ -68,9 +68,23 @@ end
 p rows_to_right_diagonals(test)
 p rows_to_left_diagonals(test)
 
-def max_product(rows, sequence_length):
+def max_product(rows, sequence_length)
   columns = rows_to_columns(rows)
   diagonals = rows_to_left_diagonals(rows) + rows_to_right_diagonals(rows)
-  lines = rows + colums + diagonals
-  # iterate over each length of arbitrary length with each_cons and multiply
+  lines = rows + columns + diagonals
+  largest_product = 0
+  lines.each do |line|
+    line.each_cons(sequence_length) do |sequence|
+      product = sequence.inject(:*)
+      largest_product = product if product > largest_product
+    end
+  end
+  largest_product
 end
+
+lines = open("../input/euler11.txt").readlines()
+rows = lines.map do |l| 
+  l.split(' ').map {|n| n.to_i}
+end
+
+p max_product(rows, 4)
