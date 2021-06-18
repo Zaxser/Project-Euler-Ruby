@@ -9,3 +9,4 @@ TODO:
 
 Fix input for problem 8
 Implement adder for problem 13
+Generalize lattice formula in problem 15 for all coordinates
