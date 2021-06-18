@@ -9,5 +9,6 @@ def digit_sum(n)
   n.to_s.split("").map {|digit| digit.to_i}.inject(:+)
 end
 
+# Too easy; to the point that I wonder what the point was.
 p digit_sum(2**15)
 p digit_sum(2**1000)

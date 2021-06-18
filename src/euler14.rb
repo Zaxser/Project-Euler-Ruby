@@ -15,6 +15,8 @@
 
 # NOTE: Once the chain starts the terms are allowed to go above one million.
 
+# Decided to write it so that it kept the entire sequence; this is probably
+# slower and definitely more memory intensive, but WAY easier to test.
 class Integer
   def collatz_sequence
     n = self
@@ -37,7 +39,6 @@ length = 1
   if sequence.length > length
     length = sequence.length
     longest = n
-    p n
   end
 end
 p longest
