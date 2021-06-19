@@ -34,3 +34,29 @@
 # trying every route. However, Problem 67, is the same challenge with a 
 # triangle containing one-hundred rows; it cannot be solved by brute force, and 
 # requires a clever method! ;o)
+
+
+def largest_sum(triangle)
+  top_heavy = triangle.reverse
+  top_heavy.each_with_index do |line, y|
+    next if y == triangle.length
+    x = 0
+    line.each_cons(2) do |first, second|
+      top_heavy[y + 1][x] += [first, second].max
+      x += 1
+    end
+  end
+  top_heavy.last.last
+end
+
+sample_triangle = open("../input/euler18_sample.txt").readlines.map do |line| 
+  line.split(" ").map {|number| number.to_i}
+end
+
+p largest_sum(sample_triangle)
+
+triangle = open("../input/euler18.txt").readlines.map do |line| 
+  line.split(" ").map {|number| number.to_i}
+end
+
+p largest_sum(triangle)
