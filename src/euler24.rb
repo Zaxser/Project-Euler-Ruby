@@ -21,11 +21,12 @@ end
 p [0,1,2,3,4,5,6,7,8,9].nth_permatation(999_999).map {|i| i.to_s}.join("")
 
 # There is a method that'll generate permutations in lexicographic order, but
-# that feels like too much cheese for me right now, so I'd really like to
-# give it a shot solving this with analysis at some point, but right now I'd
-# like to move on to the next problem.
+# that feels like too much cheese for me, so I'd really like to give it a shot 
+# solving this with analysis at some point, but right now I'd like to move on 
+# to the next problem.
 
 # In the mean time, a hint to my future self:
+
 # It looks like the way permuations increment has something to do with a
 # pattern of 9s.
 
