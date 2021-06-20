@@ -29,6 +29,9 @@ class Integer
 end
 
 # 8 and 9 digit pandigitals will always be divisible by 9!
+# Same goes for ten digit pandigitals, if you were to say that 0 comes after 9
+# This is a bit of a weird way of looking at things, any way, but it did occur
+# to me after-the-fact.
 pandigitals = (1..7).map {|n| n.pandigitals}.inject([], :+)
 
 # In numerical order, so just go through backwards and the first prime you see
