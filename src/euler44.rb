@@ -34,6 +34,7 @@ class Integer
   end
 end
 
+# Quick Tests; Makes sure we aren't living in clown land
 p 4.nth_pentagonal
 p 7.nth_pentagonal
 p 4.nth_pentagonal.pentagonal?
