@@ -50,5 +50,7 @@ p 3797.right_truncations
 p 3797.truncations
 p 3797.truncated_prime?
 
+# This takes a few seconds; one of these days I'll have to start taking
+# efficiency seriously.
 p truncated_primes = (10...1_000_000).select(&:truncated_prime?)
 p truncated_primes.inject(:+)
