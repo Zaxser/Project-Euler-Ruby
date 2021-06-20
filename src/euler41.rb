@@ -29,10 +29,10 @@ class Integer
 end
 
 # 8 and 9 digit pandigitals will always be divisible by 9!
-all_pandigitals = (1..7).map {|n| n.pandigitals}.inject([], :+)
+pandigitals = (1..7).map {|n| n.pandigitals}.inject([], :+)
 
 # In numerical order, so just go through backwards and the first prime you see
 # is the largest.
-all_pandigitals.reverse_each do |pandigital|
+pandigitals.reverse_each do |pandigital|
   break p pandigital if pandigital.prime?
 end
