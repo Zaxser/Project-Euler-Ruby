@@ -278,7 +278,12 @@ end
 # end
 
 # p size
+# This is still like crazy galactic slow.
 
+# What if we just replace my prime with a better prime library?
+
+# Holy shit this is prime is fast. Or, my prime is still really slow.
+# One day I really have to go look at prime algos seriously.
 require "prime"
 
 diagonals = 1
