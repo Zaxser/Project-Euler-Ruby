@@ -282,7 +282,7 @@ end
 
 # What if we just replace my prime with a better prime library?
 
-# Holy shit this is prime is fast. Or, my prime is still really slow.
+# Holy shit this is prime fast. Or, my prime is still really slow.
 # One day I really have to go look at prime algos seriously.
 require "prime"
 
