@@ -30,8 +30,14 @@
 # the plain text must contain common English words, decrypt the message and 
 # find the sum of the ASCII values in the original text.
 
+class String
+  def string_sum
+    self.split("").map(&:ord).inject(:+)
+  end
+end
+
 numbers = open("../input/euler59.txt").read.chomp.split(',').map(&:to_i)
-p numbers.length
+
 keys = ('aaa'..'zzz') # I just discovered you could do this.
 
 def decode(numbers, key)
@@ -42,9 +48,10 @@ def decode(numbers, key)
   result
 end
 
+
 # bs = "{[]}`<>".split("")
 common = [" is ", " a ", "an ", "from ", " the ", " of "]
 for key in keys
-  message = decode(numbers, key).downcase
-  p [key, message] if common.all? {|c| message.include?(c)}
+  message = decode(numbers, key)
+  p [message, message.string_sum] if common.all? {|c| message.downcase.include?(c)}
 end
